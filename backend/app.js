@@ -13,7 +13,7 @@ app.set('trust proxy', 1);
 
 const corsOptions = {
   origin: process.env.NODE_ENV === 'production'
-    ? 'https://task-manager-jmvobf6xh-2022cs607-9402s-projects.vercel.app'
+    ? 'https://task-manager-eta-six-13.vercel.app/'
     : 'http://localhost:5173',
   credentials: true
 };
