@@ -11,10 +11,20 @@ const authRoutes = require('./routes/authRoutes');
 
 app.set('trust proxy', 1);
 
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://task-manager-eta-six-13.vercel.app',
+  'https://task-manager-ni8rqbv6c-2022cs607-9402s-projects.vercel.app'
+];
+
 const corsOptions = {
-  origin: process.env.NODE_ENV === 'production'
-    ? 'https://task-manager-eta-six-13.vercel.app'
-    : 'http://localhost:5173',
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 };
 
