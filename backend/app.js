@@ -9,6 +9,8 @@ const swaggerSpec = require('./swagger');
 const taskRoutes = require('./routes/taskRoutes');
 const authRoutes = require('./routes/authRoutes');
 
+app.set('trust proxy', 1);
+
 const corsOptions = {
   origin: process.env.NODE_ENV === 'production'
     ? 'https://task-manager-jmvobf6xh-2022cs607-9402s-projects.vercel.app'
