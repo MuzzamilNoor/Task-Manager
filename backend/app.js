@@ -11,7 +11,7 @@ const authRoutes = require('./routes/authRoutes');
 
 const corsOptions = {
   origin: process.env.NODE_ENV === 'production'
-    ? 'https://myapp.com'
+    ? 'https://task-manager-jmvobf6xh-2022cs607-9402s-projects.vercel.app'
     : 'http://localhost:5173',
   credentials: true
 };
